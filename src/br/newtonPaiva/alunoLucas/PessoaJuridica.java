@@ -1,5 +1,7 @@
 package br.newtonPaiva.alunoLucas;
 
+import java.util.Objects;
+
 public class PessoaJuridica extends Pessoa{
     String cnpj;
 
@@ -9,5 +11,24 @@ public class PessoaJuridica extends Pessoa{
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    @Override
+    public void validarDocumento() {
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        PessoaJuridica that = (PessoaJuridica) o;
+        return cnpj.equals(that.cnpj);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), cnpj);
     }
 }

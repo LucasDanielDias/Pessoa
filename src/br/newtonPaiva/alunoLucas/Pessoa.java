@@ -2,7 +2,7 @@ package br.newtonPaiva.alunoLucas;
 
 import java.util.Objects;
 
-private class Pessoa {
+public abstract class Pessoa {
     String nome;
     public void setNome(String nome) {
         this.nome = nome;
@@ -10,9 +10,7 @@ private class Pessoa {
         public String getNome() {
             return nome;
     }
-        public String validarDocumento(){
-            return validarDocumento();
-        }
+        public abstract void validarDocumento();
 
     @Override
     public boolean equals(Object o) {
